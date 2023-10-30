@@ -1,6 +1,6 @@
 function gdf_to_openPMD(gdfFilePath, openPMDOutputPath)
     % Define paths and names
-    venvName = 'gdf_to_openpmd';
+    venvName = 'gdf_to_openpmd_1';
     venvPath = fullfile(pwd, venvName);
     pythonExe = fullfile(venvPath, 'bin', 'python'); % For macOS and Linux
     % pythonExe = fullfile(venvPath, 'Scripts', 'python.exe'); % Uncomment for Windows
@@ -11,7 +11,7 @@ function gdf_to_openPMD(gdfFilePath, openPMDOutputPath)
         system(sprintf('python -m venv %s', venvName));
 
         % Activate the virtual environment and install packages
-        system(sprintf('%s -m pip install openpmd-api~=0.13.0,~=0.14.0, matplotlib>=3.0.0', pythonExe));
+        system(sprintf('%s -m pip install openpmd-api~=0.13.0,~=0.14.0, matplotlib>=3.0.0,pylab', pythonExe));
     end
 
     % Set MATLAB to use the Python from the virtual environment
