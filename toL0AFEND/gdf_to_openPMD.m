@@ -1,4 +1,4 @@
-function save_struct_to_openPMD(gdfFilePath, openPMDOutputPath)
+function gdf_to_openPMD(gdfFilePath, openPMDOutputPath)
     % Define paths and names
     venvName = 'gdf_to_openpmd';
     venvPath = fullfile(pwd, venvName);
