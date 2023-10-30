@@ -265,7 +265,6 @@ classdef GPT_FacetInjector_NMM < handle & physConsts & batchLSF
         save_struct_to_gdf_file(fullfile(obj.srcdir,'bunchDataSingle.gdf'), data); % save Matlab data file to GPT .gdf file
       else
         save_struct_to_gdf_file(fullfile(obj.srcdir,'bunchData.gdf'), data); % save Matlab data file to GPT .gdf file
-        gdf_to_openPMD('bunchData.gdf', 'bunchData')
       end
     end
 
