@@ -15,7 +15,7 @@ function gdf_to_openPMD(gdfFilePath, openPMDOutputPath)
     end
 
     % Set MATLAB to use the Python from the virtual environment
-    pyenv(pythonExe);
+    %pyenv("Version",);
 
     % Call the gdf_to_openPMD.py script
     pythonScriptPath = 'gdf_to_openPMD.py'; % Update this to the actual path
