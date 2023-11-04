@@ -14,6 +14,8 @@ iseed = 1;
 FI.writeRunFile(iseed);
 sid=system(sprintf('gpt -o %s %s > /dev/null 2>&1',sprintf('result_%d.gdf',iseed),sprintf('GPT_%d.in',iseed)));
 
+%% convert to openpmd from gdf
+gdf_to_openPMD(sprintf('result_%d.gdf',iseed), sprintf('result_%d.h5',iseed))
 
 %% Read the simulation data
 [Bout,xv,yv,zv,ev]=FI.readData(1);
