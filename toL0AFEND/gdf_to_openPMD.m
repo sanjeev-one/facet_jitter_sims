@@ -1,6 +1,6 @@
 function gdf_to_openPMD(gdfFilePath, openPMDOutputPath)
     % Check for Python version setup in MATLAB
-    currentPythonEnv = pyenv;
+    currentPythonEnv = pyenv('Version','./gdf_to_pmd/bin/python' );
     if isempty(currentPythonEnv.Version)
         disp('Python environment is not set up in MATLAB.');
         disp('Please follow these instructions to set up a Python 3.10 virtual environment:');
@@ -20,7 +20,7 @@ function gdf_to_openPMD(gdfFilePath, openPMDOutputPath)
     end
     
     % Set the path to the Python executable
-    pythonExe = pyenv('Version');
+    pythonExe = pyenv('Version','./gdf_to_pmd/bin/python' );
     
     % Path to the Python conversion script
     pythonScriptPath = 'gdf_to_openPMD.py'; % Update this to the actual path
