@@ -1,6 +1,23 @@
 function gdf_to_openPMD(gdfFilePath, openPMDOutputPath)
     % Checking for Python 3.9 environment setup in MATLAB
     disp('Checking for Python 3.9 venv...')
+
+
+
+    [status, ~] = system('python3.9 --version');
+    if status ~= 0
+        disp('Python 3.9 is not installed or not added to the PATH.');
+        disp('Please install Python 3.9 and ensure it is added to your system''s PATH.');
+        disp('You can download Python 3.9 from https://www.python.org/downloads/release/python-390/');
+        return;
+    end
+    
+    % Assuming Python 3.9 is installed and available as 'python3.9'
+    % Set up a virtual environment (assuming we're in the right directory)
+    disp('Setting up the Python 3.9 virtual environment...');
+    system('python3.9 -m venv gdf_to_pmd');
+
+
     currentPythonEnv = pyenv;
     requiredPythonVersion = '3.9';
     
@@ -23,6 +40,10 @@ function gdf_to_openPMD(gdfFilePath, openPMDOutputPath)
         disp('After setting up the Python 3.9 environment, rerun the function.');
         return;
     end
+
+
+    pyenv('Version', './gdf_to_pmd/bin/python')
+
     
     % Set the path to the Python executable
     pythonExe = currentPythonEnv.Executable; % Use the current Python environment
