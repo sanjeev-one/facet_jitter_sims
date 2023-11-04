@@ -15,7 +15,7 @@ classdef GPT_FacetInjector_NMM < handle & physConsts & batchLSF
 
 
     %NMM: Beam specs
-    nmacro=1e5; % # of macro-particles. 1e4 is rough scan, 1e5 is point of diminishing returns, per CE
+    nmacro=1e3; % # of macro-particles. 1e4 is rough scan, 1e5 is point of diminishing returns, per CE
     Q0=[0.5e-9 1.6e-9]; % Initial bunch charge
     %laserR=2.75e-3; %0.5e-3; %2.75e-3; % cut radius, distribution is rms with 2XlaserR sigma (2.68) C3=1.88
     laserSigmaR = 1.7e-3; %NMM new
