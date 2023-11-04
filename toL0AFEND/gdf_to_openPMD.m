@@ -1,5 +1,6 @@
 function gdf_to_openPMD(gdfFilePath, openPMDOutputPath)
     % Check for Python version setup in MATLAB
+    disp('Checkign for python venv')
     currentPythonEnv = pyenv('Version','./gdf_to_pmd/bin/python' );
     if isempty(currentPythonEnv.Version)
         disp('Python environment is not set up in MATLAB.');
