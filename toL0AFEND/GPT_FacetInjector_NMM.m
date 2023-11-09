@@ -332,7 +332,7 @@ classdef GPT_FacetInjector_NMM < handle & physConsts & batchLSF
       
 
       if obj.StoreVec
-        fprintf(fid,'snapshot(%g,%g,%g) ;\n',0,15e-9,5.0e-12);
+        fprintf(fid,'snapshot(%g,%g,%g) ;\n',0,15e-9,5.0e-9);
       end
 
       fclose(fid);
