@@ -8,6 +8,7 @@ import os
 import datetime
 import re
 import argparse
+import numpy as np
 from openpmd_api import Series, Access, Dataset, Mesh_Record_Component, Iteration_Encoding, \
     Unit_Dimension
 
@@ -284,7 +285,7 @@ def name_to_group(series, name, size, gdf_file, current_spicies, current_fields)
             gdf_file - input file GPT
 
            """
-    values = fromfile(gdf_file, dtype=dtype('f8'), count=int(size / 8))
+    values = np.fromfile(gdf_file, dtype=dtype('f8'), count=int(size / 8))
 
     dataset_format = Dataset(values.dtype, [int(size / 8)])
 
